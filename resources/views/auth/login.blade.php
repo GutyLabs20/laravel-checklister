@@ -17,7 +17,7 @@
     <div class="d-table-cell align-middle">
 
         <div class="text-center mt-4">
-            <h1 class="h2">{{ __('Login') }}</h1>
+            <h1 class="h2">{{ __('Welcome') }}</h1>
             {{-- <p class="lead">
                 Sign in to your account to continue
             </p> --}}
@@ -27,15 +27,18 @@
             <div class="card-body">
                 <div class="m-sm-4">
                     <div class="text-center">
-                        <img src="{{asset('img/avatar-siete.jpg')}}" alt="Charles Hall" class="img-fluid rounded-circle" width="132"
+                        <img src="{{asset('img/avatar-siete.jpg')}}" alt="Charles Hall" class="img-fluid rounded-circle mb-5" width="132"
                             height="132" />
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="mb-3">
-                            <label class="form-label">{{ __('Email Address') }}</label>
-                            <input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter your email" />
+                        <div class="input-group mb-3">
+                            {{-- <label class="form-label">{{ __('Email Address') }}</label> --}}
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="align-middle" data-feather="mail"></i>
+                            </span>
+                            <input class="form-control form-control-lg @error('email') is-invalid @enderror" type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="{{ __('Enter your') }} {{ __('Email Address') }}" />
                             @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -43,9 +46,12 @@
                                 @enderror
                         </div>
 
-                        <div class="mb-3">
-                            <label class="form-label">{{ __('Password') }}</label>
-                            <input class="form-control form-control-lg" type="password" id="password" name="password" required autocomplete="current-password" placeholder="Enter your password" />
+                        <div class="input-group mb-3">
+                            {{-- <label class="form-label">{{ __('Password') }}</label> --}}
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="align-middle" data-feather="lock"></i>
+                            </span>
+                            <input class="form-control form-control-lg" type="password" id="password" name="password" required autocomplete="current-password" placeholder="{{ __('Enter your') }} {{ __('Password') }}" />
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -56,6 +62,7 @@
 
                         <div class="text-center mt-3">
                             <button type="submit" class="btn btn-lg btn-primary">
+                                <i class="align-middle" data-feather="log-in"></i>
                                 {{ __('Login') }}
                             </button>
                         </div>

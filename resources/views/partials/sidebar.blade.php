@@ -31,16 +31,9 @@
             </li>
 
             <li class="sidebar-item">
-                <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                <a href="{{ route('admin.pages.index') }}" class="sidebar-link collapsed">
                     <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Pages</span>
                 </a>
-                {{-- <ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-settings.html">Settings</a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-projects.html">Projects <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link" href="pages-clients.html">Clients <span
-                                class="sidebar-badge badge bg-primary">Pro</span></a></li>
-                </ul> --}}
             </li>
 
             <li class="sidebar-item">
